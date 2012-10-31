@@ -16,9 +16,16 @@ filetype plugin indent on
 
 "256 colours
 set t_Co=256
-let g:solarized_termcolors=256
 set background=dark
-colorscheme desert
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
+
+"turn off pyflakes
+let g:pyflakes_autostart = 0
+map <F11> :PyflakesToggle<cr>
 
 "highlight bad whitespace: leading tabs and trailing spaces
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\(^\t\+\|\s\+$\)/
