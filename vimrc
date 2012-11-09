@@ -16,9 +16,16 @@ filetype plugin indent on
 
 "256 colours
 set t_Co=256
-let g:solarized_termcolors=256
 set background=dark
-colorscheme desert
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
+
+"turn off pyflakes
+let g:pyflakes_autostart = 0
+map <F11> :PyflakesToggle<cr>
 
 "highlight bad whitespace: leading tabs and trailing spaces
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\(^\t\+\|\s\+$\)/
@@ -33,52 +40,4 @@ au BufRead,BufNewFile *.Plw set filetype=noweb
 let noweb_backend = "tex"
 let noweb_language = "python"
 let noweb_fold_code = 1
-
-
-
-"match brackets
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
-autocmd Syntax html,vim inoremap < <lt>><Left>
-"fn to stop annoying behaviour
-function! ClosePair(char)
-if getline('.')[col('.') - 1] == a:char
-return "\<Right>"
-else
-return a:char
-endif
-endf
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap } <c-r>=ClosePair('}')<CR>
-
-" as above for quotes: TODO triple quotes for python
-function! QuoteDelim(char)
-let line = getline('.')
-let col = col('.')
-if line[col - 2] == "\\"
-"Inserting a quoted quotation mark into the string
-return a:char
-elseif line[col - 1] == a:char
-"Escaping out of the string
-return "\<Right>"
-else
-"Starting a string
-return a:char.a:char."\<Left>"
-endif
-endf 
-inoremap " <c-r>=QuoteDelim('"')<CR>
-inoremap ' <c-r>=QuoteDelim("'")<CR>
-
-"wrap visually selected text
-vnoremap (  <ESC>`>a)<ESC>`<i(<ESC>
-vnoremap )  <ESC>`>a)<ESC>`<i(<ESC>
-vnoremap {  <ESC>`>a}<ESC>`<i{<ESC>
-vnoremap }  <ESC>`>a}<ESC>`<i{<ESC>
-vnoremap "  <ESC>`>a"<ESC>`<i"<ESC>
-vnoremap '  <ESC>`>a'<ESC>`<i'<ESC>
-vnoremap `  <ESC>`>a`<ESC>`<i`<ESC>
-vnoremap [  <ESC>`>a]<ESC>`<i[<ESC>
-vnoremap ]  <ESC>`>a]<ESC>`<i[<ESC>
 
