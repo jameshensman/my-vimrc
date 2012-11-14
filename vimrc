@@ -41,3 +41,6 @@ let noweb_backend = "tex"
 let noweb_language = "python"
 let noweb_fold_code = 1
 
+"statusline
+set laststatus=2
+set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
