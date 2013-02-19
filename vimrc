@@ -3,6 +3,7 @@ call pathogen#infect()
 
 set mouse=a
 set pastetoggle=<F2>
+set cursorline
 
 "highlight *.todo files
 au BufNewFile,BufRead *.todo set syntax=todo
@@ -44,3 +45,4 @@ let noweb_fold_code = 1
 "statusline
 set laststatus=2
 set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
+
