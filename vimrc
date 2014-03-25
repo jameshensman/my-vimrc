@@ -46,3 +46,7 @@ let noweb_fold_code = 1
 set laststatus=2
 set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
 
+"F8 to open taglist window
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
