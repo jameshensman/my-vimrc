@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/james/work/GPy/GPy'
-let g:netrw_dirhist_2='/home/james/work/GPy/GPy/likelihoods'
-let g:netrw_dirhist_3='/home/james/work/GPy/GPy/core/parameterization'
-let g:netrw_dirhist_4='/home/james/work/GPy/GPy/core'
-let g:netrw_dirhist_5='/home/james/work/GPy/GPy'
-let g:netrw_dirhist_6='/home/james/work/GPy/GPy/kern'
-let g:netrw_dirhist_7='/home/james/work/GPy/GPy/kern/_src'
