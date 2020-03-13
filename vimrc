@@ -40,7 +40,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'w0rp/ale'
-let g:ale_python_pylint_options = '-rcfile /home/james/work/coding_standards/pylint.cfg'
+let g:ale_python_pylint_options = '--rcfile ~/work/main/Build_System/linting/pylint.cfg'
+let g:ale_python_mypy_options = '--ignore-missing-imports'
 
 
 
@@ -67,3 +68,15 @@ au BufRead,BufNewFile *.py,*.pyw set shiftwidth=4
 "statusline
 set laststatus=2
 set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
+
+set nu
+set hls
+set textwidth=100
+
+" indenting
+set smartindent
+set shiftwidth=4
+set expandtab
+set tabstop=4
+set smarttab
+
