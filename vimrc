@@ -1,4 +1,8 @@
 " this vimrc slightly edited from that suggested by vundle.
+" To get started on a new machine, clone this repos somewhere like source/my-vimrc then
+" ln -s source/my-vimrc/vimrc ~/.vimrc
+"
+" then open vim and do :PluginInstall
 
 set mouse=a
 let g:solarized_termcolors=256
@@ -67,7 +71,7 @@ au BufRead,BufNewFile *.py,*.pyw set shiftwidth=4
 
 "statusline
 set laststatus=2
-set statusline=%F\ %m\ %{fugitive#statusline()}\ %y%=%l,%c\ %P
+set statusline=%F\ %m\ %{FugitiveStatusline()}\ %y%=%l,%c\ %P
 
 set nu
 set hls
